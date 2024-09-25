@@ -4,6 +4,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
 }
 
 .container {
@@ -17,11 +24,19 @@ h1, h2 {
     color: #333;
 }
 
+body.dark-mode h1, body.dark-mode h2 {
+    color: #f4f4f4;
+}
+
 form {
     background: #fff;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+}
+
+body.dark-mode form {
+    background: #444;
 }
 
 input[type="text"] {
@@ -30,6 +45,14 @@ input[type="text"] {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+
+body.dark-mode input[type="text"] {
+    background-color: #555;
+    color: #f4f4f4;
+    border-color: #666;
 }
 
 button {
@@ -43,8 +66,16 @@ button {
     cursor: pointer;
 }
 
+body.dark-mode button {
+    background: #555;
+}
+
 button:hover {
     background: #555;
+}
+
+body.dark-mode button:hover {
+    background: #777;
 }
 
 ul {
@@ -59,9 +90,21 @@ li {
     border-radius: 4px;
 }
 
+body.dark-mode li {
+    background: #444;
+}
+
 #searchResult {
     background: #fff;
     padding: 10px;
     margin-top: 10px;
     border-radius: 4px;
+}
+
+body.dark-mode #searchResult {
+    background: #444;
+}
+
+#darkModeToggle {
+    margin-bottom: 20px;
 }

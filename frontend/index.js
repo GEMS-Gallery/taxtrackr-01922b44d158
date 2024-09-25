@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const searchForm = document.getElementById('searchForm');
     const taxPayerList = document.getElementById('taxPayerList');
     const searchResult = document.getElementById('searchResult');
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
     // Function to display all tax payers
     async function displayTaxPayers() {
@@ -42,6 +43,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             searchResult.textContent = 'No TaxPayer found with that TID.';
         }
     });
+
+    // Dark mode toggle
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
 
     // Initial display of tax payers
     displayTaxPayers();
